@@ -8,11 +8,16 @@ public class Game {
 		level = lv;
 		System.out.println(level);
 		generatePhrase();
+		
 	}
 	
-	void generatePhrase(){
+	static void generatePhrase(){
 		Random r = new Random();
 		
 	
+	}
+	
+	static void guessLetter(char letter){
+		
 	}
 }

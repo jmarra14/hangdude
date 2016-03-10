@@ -34,7 +34,6 @@ public class GameController {
 
     @FXML
     private Text mouth;
-    
 	
     @FXML
     private RadioButton rdoEasy;
@@ -133,11 +132,8 @@ public class GameController {
     @FXML
     private Button btnZ;
     
-    
-    
-    
     @FXML
-    private Line head;
+    private Circle head;
     
     @FXML
     private Line hang;
@@ -155,6 +151,9 @@ public class GameController {
     private Line leftLeg;
     
     @FXML
+    private Line body;
+    
+    @FXML
     void startGame(ActionEvent event) {
     	if(rdoHard.isSelected()){
     		Game game = new Game("hard");
@@ -163,6 +162,7 @@ public class GameController {
     	}else{
     		Game game = new Game("easy");
     	}
+    	resetGame();
     }
 
     @FXML
@@ -175,5 +175,40 @@ public class GameController {
     	
     }
     
+    void resetGame(){
+    	head.setVisible(false);
+    	eyes.setVisible(false);
+    	mouth.setVisible(false);
+    	body.setVisible(false);
+    	leftArm.setVisible(false);
+    	rightArm.setVisible(false);
+    	leftLeg.setVisible(false);
+    	rightLeg.setVisible(false);
+    	btnA.setVisible(true);
+    	btnB.setVisible(true);
+    	btnC.setVisible(true);
+    	btnD.setVisible(true);
+    	btnE.setVisible(true);
+    	btnF.setVisible(true);
+    	btnG.setVisible(true);
+    	btnH.setVisible(true);
+    	btnI.setVisible(true);
+    	btnJ.setVisible(true);
+    	btnK.setVisible(true);
+    	btnL.setVisible(true);
+    	btnM.setVisible(true);
+    	btnN.setVisible(true);
+    	btnO.setVisible(true);
+    	btnP.setVisible(true);
+    	btnQ.setVisible(true);
+    	btnR.setVisible(true);
+    	btnS.setVisible(true);
+    	btnT.setVisible(true);
+    	btnU.setVisible(true);
+    	btnV.setVisible(true);
+    	btnW.setVisible(true);
+    	btnX.setVisible(true);
+    	btnZ.setVisible(true);
+    }
 
 }
