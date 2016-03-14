@@ -35,9 +35,9 @@
                </image>
             </ImageView>
          </children></AnchorPane>
-      <SplitPane fx:id="gamePane" dividerPositions="0.6972789115646258" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+      <SplitPane fx:id="gamePane" dividerPositions="0.6972789115646258" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="200.0" prefWidth="500.0">
         <items>
-          <AnchorPane fx:id="keyPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="500.0" style="-fx-background-color: lightblue;" SplitPane.resizableWithParent="false">
+          <AnchorPane fx:id="keyPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="500.0" style="-fx-background-color: lightblue;" SplitPane.resizableWithParent="false">
                <children>
                   <Label layoutX="163.0" layoutY="14.0" text="Guess the phrase:">
                      <font>
@@ -47,137 +47,137 @@
                </children></AnchorPane>
           <AnchorPane fx:id="phrasePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: lightgray;" SplitPane.resizableWithParent="false">
                <children>
-                  <Button fx:id="btnA" layoutX="34.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="A" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="46.0">
+                  <Button fx:id="btnA" layoutX="23.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="A" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="46.0">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnB" layoutX="97.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="B">
+                  <Button fx:id="btnB" layoutX="86.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="B">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnC" layoutX="160.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="C">
+                  <Button fx:id="btnC" layoutX="149.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="C">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnD" layoutX="222.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="D">
+                  <Button fx:id="btnD" layoutX="211.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="D">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnE" layoutX="285.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="E">
+                  <Button fx:id="btnE" layoutX="274.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="E">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnF" layoutX="348.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="F">
+                  <Button fx:id="btnF" layoutX="337.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="F">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnG" layoutX="411.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="G">
+                  <Button fx:id="btnG" layoutX="400.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="G">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnK" layoutX="222.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="K">
+                  <Button fx:id="btnK" layoutX="211.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="K">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnJ" layoutX="160.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="J">
+                  <Button fx:id="btnJ" layoutX="149.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="J">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnM" layoutX="348.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="M">
+                  <Button fx:id="btnM" layoutX="337.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="M">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnL" layoutX="285.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="L">
+                  <Button fx:id="btnL" layoutX="274.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="L">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnN" layoutX="411.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="N">
+                  <Button fx:id="btnN" layoutX="400.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="N">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnI" layoutX="97.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="I">
+                  <Button fx:id="btnI" layoutX="86.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="I">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnH" layoutX="34.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="H">
+                  <Button fx:id="btnH" layoutX="23.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="H">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnZ" layoutX="348.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="Z">
+                  <Button fx:id="btnZ" layoutX="337.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="Z">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnX" layoutX="222.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="X">
+                  <Button fx:id="btnX" layoutX="211.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="X">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnY" layoutX="285.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="Y">
+                  <Button fx:id="btnY" layoutX="274.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="Y">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnR" layoutX="222.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="R">
+                  <Button fx:id="btnR" layoutX="211.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="R">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnW" layoutX="160.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="W">
+                  <Button fx:id="btnW" layoutX="149.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="W">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnV" layoutX="97.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="V">
+                  <Button fx:id="btnV" layoutX="86.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="V">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnS" layoutX="285.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="S">
+                  <Button fx:id="btnS" layoutX="274.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="S">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnU" layoutX="411.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="U">
+                  <Button fx:id="btnU" layoutX="400.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="U">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnP" layoutX="97.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="P">
+                  <Button fx:id="btnP" layoutX="86.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="P">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnQ" layoutX="160.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="Q">
+                  <Button fx:id="btnQ" layoutX="149.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="Q">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnT" layoutX="348.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="T">
+                  <Button fx:id="btnT" layoutX="337.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="T">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnO" layoutX="34.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="O">
+                  <Button fx:id="btnO" layoutX="23.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="O">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Label layoutX="51.0" layoutY="9.0" text="Select a letter using the on-screen keyboard below.">
+                  <Label layoutX="40.0" layoutY="9.0" text="Select a letter using the on-screen keyboard below.">
                      <font>
                         <Font name="Gill Sans" size="19.0" />
                      </font>
