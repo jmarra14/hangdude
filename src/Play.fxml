@@ -45,7 +45,7 @@
                      </font>
                   </Label>
                </children></AnchorPane>
-          <AnchorPane fx:id="phrasePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: lightgray;" SplitPane.resizableWithParent="false">
+          <AnchorPane fx:id="phrasePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: lightgray;" SplitPane.resizableWithParent="false">
                <children>
                   <Button fx:id="btnA" layoutX="23.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: skyblue; -fx-background-radius: 10;" text="A" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="46.0">
                      <font>

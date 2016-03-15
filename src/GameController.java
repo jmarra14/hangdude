@@ -10,7 +10,9 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
 public class GameController {
-
+	
+	public Game currentGame = new Game();
+	
     @FXML
 	private SplitPane pane;
 
@@ -41,7 +43,6 @@ public class GameController {
     @FXML
     private RadioButton rdoMedium;
     
-
     @FXML
     private RadioButton rdoHard;
     
@@ -155,14 +156,16 @@ public class GameController {
     
     @FXML
     void startGame(ActionEvent event) {
-    	if(rdoHard.isSelected()){
-    		Game game = new Game("hard");
-    	}else if (rdoMedium.isSelected()){
-    		Game game = new Game("medium");
-    	}else{
-    		Game game = new Game("easy");
-    	}
     	resetGame();
+    	if(rdoHard.isSelected()){
+    		currentGame.generatePhrase("HardDict.txt");
+    	}else if (rdoMedium.isSelected()){
+    		currentGame.generatePhrase("MedDict.txt");
+    	}else{
+    		currentGame.generatePhrase("EasyDict.txt");
+    	}
+    	System.out.println("Phrase is: " + currentGame.phrase);
+    	
     }
 
     @FXML
@@ -172,7 +175,62 @@ public class GameController {
     
     @FXML
     void letterGuess(ActionEvent event){
-    	
+    	char letter = 0;
+    	if (event.getSource()==btnA){
+    		letter='a';
+    	} else if (event.getSource()==btnB){
+    		letter='b';
+    	} else if (event.getSource()==btnC){
+    		letter='c';
+    	} else if (event.getSource()==btnD){
+    		letter='d';
+    	} else if (event.getSource()==btnE){
+    		letter='e';
+    	} else if (event.getSource()==btnF){
+    		letter='f';
+    	} else if (event.getSource()==btnG){
+        		letter='g';
+    	} else if (event.getSource()==btnH){
+    		letter='h';
+    	} else if (event.getSource()==btnI){
+    		letter='i';
+    	} else if (event.getSource()==btnJ){
+    		letter='j';
+    	} else if (event.getSource()==btnK){
+    		letter='k';
+    	} else if (event.getSource()==btnL){
+    		letter='l';
+    	} else if (event.getSource()==btnM){
+    		letter='m';
+    	} else if (event.getSource()==btnN){
+    		letter='n';
+    	} else if (event.getSource()==btnO){
+    		letter='o';
+    	} else if (event.getSource()==btnP){
+    		letter='p';
+    	} else if (event.getSource()==btnQ){
+    		letter='q';
+    	} else if (event.getSource()==btnR){
+    		letter='r';
+    	} else if (event.getSource()==btnS){
+    		letter='s';
+    	} else if (event.getSource()==btnT){
+    		letter='t';
+    	} else if (event.getSource()==btnU){
+        	letter='u';
+    	} else if (event.getSource()==btnV){
+    		letter='v';
+    	} else if (event.getSource()==btnW){
+    		letter='w';
+    	} else if (event.getSource()==btnX){
+    		letter='x';
+    	} else if (event.getSource()==btnY){
+    		letter='y';
+    	} else if (event.getSource()==btnZ){
+    		letter='z';
+    	}
+		currentGame.guessLetter(letter);
+  
     }
     
     void resetGame(){

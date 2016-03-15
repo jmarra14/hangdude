@@ -1,0 +1,4 @@
+input and output 
+declare a variable
+instantiate an object
+object oriented programming
