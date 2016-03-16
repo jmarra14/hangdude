@@ -44,6 +44,11 @@
                         <Font name="Gill Sans" size="24.0" />
                      </font>
                   </Label>
+                  <Text fx:id="textArea" layoutX="9.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="483.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
                </children></AnchorPane>
           <AnchorPane fx:id="phrasePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: lightgray;" SplitPane.resizableWithParent="false">
                <children>
