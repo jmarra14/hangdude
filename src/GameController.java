@@ -268,14 +268,20 @@ public class GameController {
     	}
 		currentGame.guessLetter(letter);
 		textArea.setText(currentGame.phrase);
+		
 		if (currentGame.checkAnswer()){
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("You won!");
 			alert.setHeaderText("GREAT JOB! YOU WON!");
 			alert.setContentText("Would you like to play again?");
 
+			ButtonType buttonTypeYes = new ButtonType("Yes! Start New Game.");
+			ButtonType buttonTypeNo = new ButtonType("No. Close Game.");
+			
+			alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+			
 			Optional<ButtonType> result = alert.showAndWait();
-			if (result.get() == ButtonType.OK){
+			if (result.get() == buttonTypeYes){
 			    startGame(event);
 			} else {
 			    System.exit(0);
