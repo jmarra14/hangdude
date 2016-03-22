@@ -20,6 +20,8 @@ public class Play extends Application{
 		PrimaryStage.setTitle("HangDude");
 		PrimaryStage.setScene(scene);
 		PrimaryStage.show();
+		
+		
 	}
 
 }

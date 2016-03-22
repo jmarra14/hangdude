@@ -9,6 +9,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -268,8 +269,16 @@ public class GameController {
     	}
 		currentGame.guessLetter(letter);
 		textArea.setText(currentGame.phrase);
-		
-		if (currentGame.checkAnswer()){
+		checkWin(event);
+		checkLose(event);
+    }
+    
+    void pressKey(KeyEvent key){
+    }
+    
+    
+    void checkWin(ActionEvent event){
+    	if (currentGame.checkAnswer()){
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("You won!");
 			alert.setHeaderText("GREAT JOB! YOU WON!");
@@ -287,8 +296,12 @@ public class GameController {
 			    System.exit(0);
 			}
 		}
-  
     }
+    
+    void checkLose(ActionEvent event){
+    	
+    }
+    
     
     void resetGame(){
     	currentGame.guesses.clear();
