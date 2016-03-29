@@ -9,36 +9,19 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
-public class GameController {
+public class GameController{
 	
 	public Game currentGame = new Game();
 	
 	@FXML
 	private Text textArea;
-	
-    @FXML
-	private SplitPane pane;
-
-    @FXML
-    private AnchorPane levelPane;
-
-    @FXML 
-    private SplitPane gamePane;
-
-    @FXML
-    private AnchorPane keyPane;
-    
-    @FXML
-    private AnchorPane phrasePane;
-    
-    @FXML
-    private AnchorPane hangPane;
     
     @FXML
     private Text eyes;
@@ -146,9 +129,6 @@ public class GameController {
     private Circle head;
     
     @FXML
-    private Line hang;
-    
-    @FXML
     private Line leftArm;
     
     @FXML
@@ -166,7 +146,6 @@ public class GameController {
     @FXML
     void startGame(ActionEvent event) {
     	resetGame();
-    
     	if(rdoHard.isSelected()){
     		currentGame.generatePhrase("HardDict.txt");
     	}else if (rdoMedium.isSelected()){
@@ -175,9 +154,6 @@ public class GameController {
     		currentGame.generatePhrase("EasyDict.txt");
     	}
     	textArea.setText(new String(currentGame.phrase));
-    	System.out.println("Answer is: " + currentGame.answer);
-    	System.out.println("Current phrase is: " + currentGame.phrase);
-    	
     }
 
     @FXML
@@ -187,7 +163,11 @@ public class GameController {
     
     @FXML
     void letterGuess(ActionEvent event){
-    	char letter = 0;
+    	if(currentGame.phrase==null){
+    		return;
+    	}
+    	
+    	char letter;
     	if (event.getSource()==btnA){
     		letter='a';
     		btnA.setVisible(false);
@@ -263,17 +243,118 @@ public class GameController {
     	} else if (event.getSource()==btnY){
     		letter='y';
     		btnY.setVisible(false);
-    	} else if (event.getSource()==btnZ){
+    	} else{
     		letter='z';
     		btnZ.setVisible(false);
     	}
-		currentGame.guessLetter(letter);
-		textArea.setText(currentGame.phrase);
-		checkWin(event);
-		checkLose(event);
+		if(currentGame.checkLetter(letter)){
+		}
+		else{
+			currentGame.guessLetter(letter);
+			textArea.setText(currentGame.phrase.toUpperCase());
+			checkWin(event);
+			checkLose(event);
+		}
+		
     }
     
-    void pressKey(KeyEvent key){
+    @FXML
+    void pressKey(KeyEvent event){
+    	if(currentGame.phrase==null){
+    		return;
+    	}
+    	
+    	char letter;
+    	if (event.getCode()==KeyCode.A){
+    		letter='a';
+    		btnA.setVisible(false);
+    	} else if (event.getCode()==KeyCode.B){
+    		letter='b';
+    		btnB.setVisible(false);
+    	} else if (event.getCode()==KeyCode.C){
+    		letter='c';
+    		btnC.setVisible(false);
+    	} else if (event.getCode()==KeyCode.D){
+    		letter='d';
+    		btnD.setVisible(false);
+    	} else if (event.getCode()==KeyCode.E){
+    		letter='e';
+    		btnE.setVisible(false);
+    	} else if (event.getCode()==KeyCode.F){
+    		letter='f';
+    		btnF.setVisible(false);
+    	} else if (event.getCode()==KeyCode.G){
+        	letter='g';
+        	btnG.setVisible(false);
+    	} else if (event.getCode()==KeyCode.H){
+    		letter='h';
+    		btnH.setVisible(false);
+    	} else if (event.getCode()==KeyCode.I){
+    		letter='i';
+    		btnI.setVisible(false);
+    	} else if (event.getCode()==KeyCode.J){
+    		letter='j';
+    		btnJ.setVisible(false);
+    	} else if (event.getCode()==KeyCode.K){
+    		letter='k';
+    		btnK.setVisible(false);
+    	} else if (event.getCode()==KeyCode.L){
+    		letter='l';
+    		btnL.setVisible(false);
+    	} else if (event.getCode()==KeyCode.M){
+    		letter='m';
+    		btnM.setVisible(false);
+    	} else if (event.getCode()==KeyCode.N){
+    		letter='n';
+    		btnN.setVisible(false);
+    	} else if (event.getCode()==KeyCode.O){
+    		letter='o';
+    		btnO.setVisible(false);
+    	} else if (event.getCode()==KeyCode.P){
+    		letter='p';
+    		btnP.setVisible(false);
+    	} else if (event.getCode()==KeyCode.Q){
+    		letter='q';
+    		btnQ.setVisible(false);
+    	} else if (event.getCode()==KeyCode.R){
+    		letter='r';
+    		btnR.setVisible(false);
+    	} else if (event.getCode()==KeyCode.S){
+    		letter='s';
+    		btnS.setVisible(false);
+    	} else if (event.getCode()==KeyCode.T){
+    		letter='t';
+    		btnT.setVisible(false);
+    	} else if (event.getCode()==KeyCode.U){
+        	letter='u';
+        	btnU.setVisible(false);
+    	} else if (event.getCode()==KeyCode.V){
+    		letter='v';
+    		btnV.setVisible(false);
+    	} else if (event.getCode()==KeyCode.W){
+    		letter='w';
+    		btnW.setVisible(false);
+    	} else if (event.getCode()==KeyCode.X){
+    		letter='x';
+    		btnX.setVisible(false);
+    	} else if (event.getCode()==KeyCode.Y){
+    		letter='y';
+    		btnY.setVisible(false);
+    	} else if (event.getCode()==KeyCode.Z){
+    		letter='z';
+    		btnZ.setVisible(false);
+    	}
+    	else{ 
+    		return;
+    	}
+    	if(currentGame.checkLetter(letter)){
+		}
+		else{
+			currentGame.guessLetter(letter);
+			textArea.setText(currentGame.phrase.toUpperCase());
+			checkWin(new ActionEvent());
+			checkLose(new ActionEvent());
+		}
     }
     
     
@@ -282,7 +363,7 @@ public class GameController {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("You won!");
 			alert.setHeaderText("GREAT JOB! YOU WON!");
-			alert.setContentText("Would you like to play again?");
+			alert.setContentText(String.format("The answer was: %s%n%nWould you like to play again?%n",currentGame.phrase.toUpperCase()));
 
 			ButtonType buttonTypeYes = new ButtonType("Yes! Start New Game.");
 			ButtonType buttonTypeNo = new ButtonType("No. Close Game.");
@@ -299,11 +380,44 @@ public class GameController {
     }
     
     void checkLose(ActionEvent event){
-    	
+    	switch(currentGame.wrong){
+    		case 0: break;
+    		case 1: head.setVisible(true);
+    				eyes.setVisible(true);
+    				mouth.setVisible(true);
+    				break;
+    		case 2: body.setVisible(true);
+    				break;
+    		case 3: leftArm.setVisible(true);
+    				break;
+    		case 4: rightArm.setVisible(true);
+    				break;
+    		case 5: leftLeg.setVisible(true);
+    				break;
+    		case 6: rightLeg.setVisible(true);
+		    		Alert alert = new Alert(AlertType.CONFIRMATION);
+					alert.setTitle("You LOSE!");
+					alert.setHeaderText("Sorry, YOU LOST!");
+					alert.setContentText("Would you like to play again?");
+		
+					ButtonType buttonTypeYes = new ButtonType("Yes! Start New Game.");
+					ButtonType buttonTypeNo = new ButtonType("No. Close Game.");
+					
+					alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+					
+					Optional<ButtonType> result = alert.showAndWait();
+					if (result.get() == buttonTypeYes){
+					    startGame(event);
+					} else {
+					    System.exit(0);
+					}
+					break;
+    	}
     }
     
-    
+    @FXML
     void resetGame(){
+    	currentGame.wrong=0;
     	currentGame.guesses.clear();
     	currentGame.guesses.add(' ');
     	head.setVisible(false);
@@ -338,6 +452,7 @@ public class GameController {
     	btnV.setVisible(true);
     	btnW.setVisible(true);
     	btnX.setVisible(true);
+    	btnY.setVisible(true);
     	btnZ.setVisible(true);
     }
 

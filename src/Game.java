@@ -1,20 +1,20 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-	
-	public String answer;
+
+	private String answer;
 	
 	public String phrase;
 	
-	public ArrayList<Character> guesses = new ArrayList<Character>();
+	public Collection<Character> guesses = new ArrayList<Character>();
 	
-	public Game(){
-		
-	}
+	int wrong;
 	
 	public void generatePhrase(String lev){
 		Random r = new Random();
@@ -23,8 +23,9 @@ public class Game {
 			while(read.hasNext()){
 				dict.add(read.nextLine());
 			}
-			for (int i = 0; i<r.nextInt(dict.size()-1); i++){
+			for (int i = 0; i<r.nextInt(dict.size()); i++){
 				answer = dict.get(i);
+				answer = answer.toLowerCase();
 			}
 			phrase = "";
 			changePhrase();
@@ -37,7 +38,12 @@ public class Game {
 	
 	void guessLetter(char letter){
 		guesses.add(letter);
-		changePhrase();
+		if (letterExists(letter)){
+			changePhrase();
+		}
+		else {
+			wrong++;
+		}
 	}
 	
 	void changePhrase(){
@@ -54,12 +60,23 @@ public class Game {
 	}
 	
 	boolean checkLetter(char letter){
-		for(int i=0; i<guesses.size(); i++){
-			if (guesses.get(i)==(letter)){
+		Iterator<Character> check = guesses.iterator();
+		while(check.hasNext()){
+			if (check.next().equals(letter)){
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	boolean letterExists(char ch){
+		String let = ""+ch;
+		if (answer.contains(let)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	boolean checkAnswer(){

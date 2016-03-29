@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.chart.*?>
 
-<SplitPane fx:id="pane" dividerPositions="0.1935483870967742, 0.7519466073414905" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+<SplitPane fx:id="pane" dividerPositions="0.1935483870967742, 0.7519466073414905" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" onKeyPressed="#pressKey" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
   <items>
     <AnchorPane fx:id="levelPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: skyblue;" SplitPane.resizableWithParent="false">
          <children>
