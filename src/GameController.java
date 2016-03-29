@@ -383,8 +383,6 @@ public class GameController{
     	switch(currentGame.wrong){
     		case 0: break;
     		case 1: head.setVisible(true);
-    				eyes.setVisible(true);
-    				mouth.setVisible(true);
     				break;
     		case 2: body.setVisible(true);
     				break;
@@ -395,6 +393,9 @@ public class GameController{
     		case 5: leftLeg.setVisible(true);
     				break;
     		case 6: rightLeg.setVisible(true);
+    				eyes.setVisible(true);
+    				mouth.setVisible(true);
+    				
 		    		Alert alert = new Alert(AlertType.CONFIRMATION);
 					alert.setTitle("You LOSE!");
 					alert.setHeaderText("Sorry, YOU LOST!");
