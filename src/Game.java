@@ -23,7 +23,7 @@ public class Game {
 			while(read.hasNext()){
 				dict.add(read.nextLine());
 			}
-			for (int i = 0; i<r.nextInt(dict.size()); i++){
+			for (int i = 0; i<=r.nextInt(dict.size()); i++){
 				answer = dict.get(i);
 				answer = answer.toLowerCase();
 			}
