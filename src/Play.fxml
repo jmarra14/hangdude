@@ -24,16 +24,25 @@
             <RadioButton fx:id="rdoHard" layoutX="51.0" layoutY="339.0" mnemonicParsing="false" stylesheets="@../Styles.css" text="Hard" toggleGroup="$Level" />
             <Button id="gameButtons" fx:id="startButton" layoutX="40.0" layoutY="381.0" mnemonicParsing="false" onAction="#startGame" stylesheets="@../Styles.css" text="Start New Game!" />
             <Button id="gameButtons" fx:id="quitButton" layoutX="79.0" layoutY="421.0" mnemonicParsing="false" onAction="#quit" stylesheets="@../Styles.css" text="Quit" />
-            <Label layoutX="39.0" layoutY="249.0" text="Choose a Level:" />
+            <Label layoutX="50.0" layoutY="247.0" text="Choose a Level:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
             <Label alignment="TOP_LEFT" layoutX="22.0" layoutY="30.0" minWidth="100.0" text="HangDude">
                <font>
                   <Font name="Gill Sans" size="36.0" />
                </font>
+               <effect>
+                  <DropShadow color="#17595eba" />
+               </effect>
             </Label>
             <ImageView fitHeight="131.0" fitWidth="73.0" layoutX="56.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../HangDude.png" />
                </image>
+               <effect>
+                  <DropShadow color="#00000085" />
+               </effect>
             </ImageView>
          </children></AnchorPane>
       <SplitPane fx:id="gamePane" dividerPositions="0.6972789115646258" maxHeight="600.0" maxWidth="500.0" minHeight="600.0" minWidth="500.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="500.0">
@@ -44,6 +53,9 @@
                      <font>
                         <Font name="Gill Sans" size="24.0" />
                      </font>
+                     <effect>
+                        <DropShadow color="#0000007b" />
+                     </effect>
                   </Label>
                   <Text fx:id="textArea" layoutX="9.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="483.0">
                      <font>
@@ -192,6 +204,9 @@
                      <font>
                         <Font name="Gill Sans" size="19.0" />
                      </font>
+                     <effect>
+                        <Glow level="0.16" />
+                     </effect>
                   </Label>
                </children></AnchorPane>
         </items>
@@ -199,37 +214,37 @@
       <AnchorPane id="sidePane" fx:id="hangPane" maxHeight="600.0" maxWidth="200.0" minHeight="600.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: skyblue;" stylesheets="@../Styles.css" SplitPane.resizableWithParent="false">
          <children>
             <Line fx:id="hang" endX="50.0" layoutX="124.0" layoutY="78.0" rotate="90.0" startX="-100.0" strokeWidth="5.0" />
-            <Line fx:id="rightArm" disable="true" endX="150.0" layoutX="37.0" layoutY="319.0" rotate="45.0" startX="50.0" stroke="#e6e6c8" strokeWidth="10.0" visible="false">
+            <Line fx:id="rightArm" disable="true" endX="150.0" layoutX="37.0" layoutY="319.0" rotate="45.0" startX="50.0" stroke="#e6e6c8" strokeWidth="10.0">
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" color="#00000052" />
                </effect></Line>
-            <Line fx:id="leftLeg" disable="true" endX="100.0" layoutX="-87.0" layoutY="482.0" rotate="-45.0" startX="200.0" stroke="#e6e6c8" strokeWidth="10.0" visible="false">
+            <Line fx:id="leftLeg" disable="true" endX="100.0" layoutX="-87.0" layoutY="482.0" rotate="-45.0" startX="200.0" stroke="#e6e6c8" strokeWidth="10.0">
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" color="#00000052" />
                </effect></Line>
-            <Line fx:id="rightLeg" disable="true" endX="100.0" layoutX="-13.0" layoutY="482.0" rotate="45.0" startX="200.0" stroke="#e6e6c8" strokeWidth="10.0" visible="false">
+            <Line fx:id="rightLeg" disable="true" endX="100.0" layoutX="-13.0" layoutY="482.0" rotate="45.0" startX="200.0" stroke="#e6e6c8" strokeWidth="10.0">
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" color="#00000052" />
                </effect></Line>
-            <Line fx:id="leftArm" disable="true" endX="150.0" layoutX="-37.0" layoutY="319.0" rotate="-45.0" startX="50.0" stroke="#e6e6c8" strokeWidth="10.0" visible="false">
+            <Line fx:id="leftArm" disable="true" endX="150.0" layoutX="-37.0" layoutY="319.0" rotate="-45.0" startX="50.0" stroke="#e6e6c8" strokeWidth="10.0">
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" color="#00000052" />
                </effect></Line>
-            <Text fx:id="eyes" disable="true" fill="#e6e6c8" layoutX="79.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x  x" visible="false">
+            <Text fx:id="eyes" disable="true" fill="#e6e6c8" layoutX="79.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x  x">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text fx:id="mouth" disable="true" fill="#e6e6c8" layoutX="95.0" layoutY="232.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(" visible="false">
+            <Text fx:id="mouth" disable="true" fill="#e6e6c8" layoutX="95.0" layoutY="232.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(">
                <font>
                   <Font size="43.0" />
                </font>
             </Text>
-            <Line fx:id="body" disable="true" endX="100.0" layoutX="99.0" layoutY="346.0" rotate="90.0" startX="-100.0" stroke="#e6e6c8" strokeWidth="10.0" visible="false">
+            <Line fx:id="body" disable="true" endX="100.0" layoutX="99.0" layoutY="348.0" rotate="90.0" startX="-100.0" stroke="#e6e6c8" strokeWidth="10.0">
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" color="#00000052" />
                </effect></Line>
-            <Circle fx:id="head" disable="true" fill="#96963600" layoutX="99.0" layoutY="203.0" radius="47.0" stroke="#e6e6c8" strokeType="INSIDE" strokeWidth="10.0" visible="false">
+            <Circle fx:id="head" disable="true" fill="#96963600" layoutX="99.0" layoutY="203.0" radius="47.0" stroke="#e6e6c8" strokeType="INSIDE" strokeWidth="10.0">
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" color="#00000052" />
                </effect></Circle>

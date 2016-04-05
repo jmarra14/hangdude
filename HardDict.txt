@@ -1,4 +1,14 @@
-input and output 
+input and output
 declare a variable
 instantiate an object
 object oriented programming
+data management
+Random access memory
+read only memory
+computer science
+computer information services
+graphics processor
+primary storage device
+telecommunications
+voice over Internet protocol
+near field communications

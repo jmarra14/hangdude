@@ -3,3 +3,17 @@ motherboard
 operating system
 programming language
 virtual machine
+card reader
+data type
+debugger
+emoticon
+encryption
+zip file
+cache memory
+beta testing
+bluetooth
+domain
+compatibility
+wireless router
+optical drive
+hamburger menu

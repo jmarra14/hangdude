@@ -8,3 +8,21 @@ stacks
 arrays
 arraylist
 scanner
+analog
+android
+linux
+memory
+server
+wifi
+screenshot
+hacking
+desktop
+monitor
+usb port
+QR code
+windows
+macintosh
+macbook
+ipad
+iphone
+qwerty
