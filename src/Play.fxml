@@ -11,19 +11,19 @@
 <?import java.lang.*?>
 <?import javafx.scene.chart.*?>
 
-<SplitPane fx:id="pane" dividerPositions="0.0, 0.0" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" onKeyPressed="#pressKey" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+<SplitPane fx:id="pane" dividerPositions="0.0, 0.0" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" onKeyPressed="#pressKey" prefHeight="600.0" prefWidth="900.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
   <items>
-    <AnchorPane id="sidePane" fx:id="levelPane" maxHeight="600.0" maxWidth="200.0" minHeight="600.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" stylesheets="@../Styles.css" SplitPane.resizableWithParent="false">
+    <AnchorPane id="sidePane" fx:id="levelPane" maxHeight="600.0" maxWidth="200.0" minHeight="600.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" stylesheets="@Styles.css" SplitPane.resizableWithParent="false">
          <children>
-            <RadioButton fx:id="rdoEasy" layoutX="51.0" layoutY="279.0" mnemonicParsing="false" selected="true" stylesheets="@../Styles.css" text="Easy">
+            <RadioButton fx:id="rdoEasy" layoutX="51.0" layoutY="279.0" mnemonicParsing="false" selected="true" text="Easy">
                <toggleGroup>
                   <ToggleGroup fx:id="Level" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="rdoMedium" layoutX="51.0" layoutY="308.0" mnemonicParsing="false" stylesheets="@../Styles.css" text="Medium" toggleGroup="$Level" />
-            <RadioButton fx:id="rdoHard" layoutX="51.0" layoutY="339.0" mnemonicParsing="false" stylesheets="@../Styles.css" text="Hard" toggleGroup="$Level" />
-            <Button id="gameButtons" fx:id="startButton" layoutX="40.0" layoutY="381.0" mnemonicParsing="false" onAction="#startGame" stylesheets="@../Styles.css" text="Start New Game!" />
-            <Button id="gameButtons" fx:id="quitButton" layoutX="79.0" layoutY="421.0" mnemonicParsing="false" onAction="#quit" stylesheets="@../Styles.css" text="Quit" />
+            <RadioButton fx:id="rdoMedium" layoutX="51.0" layoutY="308.0" mnemonicParsing="false" text="Medium" toggleGroup="$Level" />
+            <RadioButton fx:id="rdoHard" layoutX="51.0" layoutY="339.0" mnemonicParsing="false" text="Hard" toggleGroup="$Level" />
+            <Button id="gameButtons" fx:id="startButton" layoutX="40.0" layoutY="381.0" mnemonicParsing="false" onAction="#startGame" stylesheets="@Styles.css" text="Start New Game!" />
+            <Button id="gameButtons" fx:id="quitButton" layoutX="79.0" layoutY="421.0" mnemonicParsing="false" onAction="#quit" stylesheets="@Styles.css" text="Quit" />
             <Label layoutX="50.0" layoutY="247.0" text="Choose a Level:">
                <font>
                   <Font name="System Bold" size="13.0" />
@@ -38,16 +38,16 @@
             </Label>
             <ImageView fitHeight="131.0" fitWidth="73.0" layoutX="56.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../HangDude.png" />
+                  <Image url="@../src/HangDude.png" />
                </image>
                <effect>
                   <DropShadow color="#00000085" />
                </effect>
             </ImageView>
          </children></AnchorPane>
-      <SplitPane fx:id="gamePane" dividerPositions="0.6972789115646258" maxHeight="600.0" maxWidth="500.0" minHeight="600.0" minWidth="500.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="500.0">
+      <SplitPane fx:id="gamePane" dividerPositions="0.6972789115646258" maxHeight="600.0" maxWidth="500.0" minHeight="600.0" minWidth="500.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="500.0" stylesheets="@Styles.css">
         <items>
-          <AnchorPane id="topPane" fx:id="keyPane" maxHeight="290.0" maxWidth="500.0" minHeight="290.0" minWidth="500.0" prefHeight="290.0" prefWidth="500.0" style="-fx-background-color: lightblue;" stylesheets="@../Styles.css" SplitPane.resizableWithParent="false">
+          <AnchorPane id="topPane" fx:id="keyPane" maxHeight="290.0" maxWidth="500.0" minHeight="290.0" minWidth="500.0" prefHeight="290.0" prefWidth="500.0" style="-fx-background-color: lightblue;" stylesheets="@Styles.css" SplitPane.resizableWithParent="false">
                <children>
                   <Label fx:id="Prompt" layoutX="163.0" layoutY="14.0" text="Guess the phrase:">
                      <font>
@@ -68,134 +68,134 @@
                      </font>
                   </Text>
                </children></AnchorPane>
-          <AnchorPane id="bottomPane" fx:id="phrasePane" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: lightgray;" stylesheets="@../Styles.css" SplitPane.resizableWithParent="false">
+          <AnchorPane id="bottomPane" fx:id="phrasePane" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: lightgray;" stylesheets="@Styles.css" SplitPane.resizableWithParent="false">
                <children>
-                  <Button id="buttons" fx:id="btnA" layoutX="32.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="A" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="46.0">
+                  <Button id="buttons" fx:id="btnA" layoutX="32.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="A" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="46.0">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnB" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="B">
+                  <Button id="buttons" fx:id="btnB" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="B">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnC" layoutX="158.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="C">
+                  <Button id="buttons" fx:id="btnC" layoutX="158.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="C">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnD" layoutX="220.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="D">
+                  <Button id="buttons" fx:id="btnD" layoutX="220.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="D">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnE" layoutX="283.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="E">
+                  <Button id="buttons" fx:id="btnE" layoutX="283.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="E">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnF" layoutX="346.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="F">
+                  <Button id="buttons" fx:id="btnF" layoutX="346.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="F">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnG" layoutX="409.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="G">
+                  <Button id="buttons" fx:id="btnG" layoutX="409.0" layoutY="46.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="G">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnK" layoutX="220.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="K">
+                  <Button id="buttons" fx:id="btnK" layoutX="220.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="K">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnJ" layoutX="158.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="J">
+                  <Button id="buttons" fx:id="btnJ" layoutX="158.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="J">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnM" layoutX="346.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="M">
+                  <Button id="buttons" fx:id="btnM" layoutX="346.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="M">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnL" layoutX="283.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="L">
+                  <Button id="buttons" fx:id="btnL" layoutX="283.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="L">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnN" layoutX="409.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="N">
+                  <Button id="buttons" fx:id="btnN" layoutX="409.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="N">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnI" layoutX="95.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="I">
+                  <Button id="buttons" fx:id="btnI" layoutX="95.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="I">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnH" layoutX="32.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="H">
+                  <Button id="buttons" fx:id="btnH" layoutX="32.0" layoutY="109.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="H">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnZ" layoutX="346.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="Z">
+                  <Button id="buttons" fx:id="btnZ" layoutX="346.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="Z">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnX" layoutX="220.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="X">
+                  <Button id="buttons" fx:id="btnX" layoutX="220.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="X">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnY" layoutX="283.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="Y">
+                  <Button id="buttons" fx:id="btnY" layoutX="283.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="Y">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnR" layoutX="220.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="R">
+                  <Button id="buttons" fx:id="btnR" layoutX="220.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="R">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnW" layoutX="158.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="W">
+                  <Button id="buttons" fx:id="btnW" layoutX="158.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="W">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnV" layoutX="95.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="V">
+                  <Button id="buttons" fx:id="btnV" layoutX="95.0" layoutY="234.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="V">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnS" layoutX="283.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="S">
+                  <Button id="buttons" fx:id="btnS" layoutX="283.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="S">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnU" layoutX="409.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="U">
+                  <Button id="buttons" fx:id="btnU" layoutX="409.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="U">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnP" layoutX="95.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="P">
+                  <Button id="buttons" fx:id="btnP" layoutX="95.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="P">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnQ" layoutX="158.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="Q">
+                  <Button id="buttons" fx:id="btnQ" layoutX="158.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="Q">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnT" layoutX="346.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="T">
+                  <Button id="buttons" fx:id="btnT" layoutX="346.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="T">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" fx:id="btnO" layoutX="32.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@../Styles.css" text="O">
+                  <Button id="buttons" fx:id="btnO" layoutX="32.0" layoutY="171.0" mnemonicParsing="false" onAction="#letterGuess" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 5;" stylesheets="@Styles.css" text="O">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -211,7 +211,7 @@
                </children></AnchorPane>
         </items>
       </SplitPane>
-      <AnchorPane id="sidePane" fx:id="hangPane" maxHeight="600.0" maxWidth="200.0" minHeight="600.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: skyblue;" stylesheets="@../Styles.css" SplitPane.resizableWithParent="false">
+      <AnchorPane id="sidePane" fx:id="hangPane" maxHeight="600.0" maxWidth="200.0" minHeight="600.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: skyblue;" stylesheets="@Styles.css" SplitPane.resizableWithParent="false">
          <children>
             <Line fx:id="hang" endX="50.0" layoutX="124.0" layoutY="78.0" rotate="90.0" startX="-100.0" strokeWidth="5.0" />
             <Line fx:id="rightArm" disable="true" endX="150.0" layoutX="37.0" layoutY="319.0" rotate="45.0" startX="50.0" stroke="#e6e6c8" strokeWidth="10.0">

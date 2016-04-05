@@ -155,11 +155,11 @@ public class GameController{
     	//Runs generatePhrase method of currentGame based on 
     	//the difficulty selected
     	if(rdoHard.isSelected()){
-    		currentGame.generatePhrase("HardDict.txt");
+    		currentGame.generatePhrase("src/HardDict.txt");
     	}else if (rdoMedium.isSelected()){
-    		currentGame.generatePhrase("MedDict.txt");
+    		currentGame.generatePhrase("src/MedDict.txt");
     	}else{
-    		currentGame.generatePhrase("EasyDict.txt");
+    		currentGame.generatePhrase("src/EasyDict.txt");
     	}
     	
     	//Display the blanks for the new phrase in the window
