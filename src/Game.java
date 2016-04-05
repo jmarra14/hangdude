@@ -10,9 +10,9 @@ public class Game {
 
 	private String answer;
 	
-	public String phrase;
+	String phrase;
 	
-	public Collection<Character> guesses = new ArrayList<Character>();
+	Collection<Character> guesses = new ArrayList<Character>();
 	
 	int wrong;
 	
@@ -85,6 +85,10 @@ public class Game {
 		} else{
 			return false;
 		}
+	}
+	
+	public String getAnswer(){
+		return answer;
 	}
 	
 	

@@ -7,18 +7,20 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
 public class GameController{
 	
+	//Create a new Game object called currentGame
 	public Game currentGame = new Game();
+	
+	@FXML
+	private Text prompt;
 	
 	@FXML
 	private Text textArea;
@@ -142,10 +144,16 @@ public class GameController{
     
     @FXML
     private Line body;
-    
+      
+    //This method is run when the Start New Game button is clicked
     @FXML
     void startGame(ActionEvent event) {
+    	
+    	//Runs resetGame method
     	resetGame();
+    	
+    	//Runs generatePhrase method of currentGame based on 
+    	//the difficulty selected
     	if(rdoHard.isSelected()){
     		currentGame.generatePhrase("HardDict.txt");
     	}else if (rdoMedium.isSelected()){
@@ -153,21 +161,31 @@ public class GameController{
     	}else{
     		currentGame.generatePhrase("EasyDict.txt");
     	}
+    	
+    	//Display the blanks for the new phrase in the window
     	textArea.setText(new String(currentGame.phrase));
     }
 
+    //This method ends the program with the Quit button is clicked
     @FXML
     void quit(ActionEvent event) {
     	System.exit(0);
     }
     
+    //This method is run when a letter button is pressed
     @FXML
     void letterGuess(ActionEvent event){
+    	//If a phrase has not been generated, do not run this method
     	if(currentGame.phrase==null){
     		return;
     	}
     	
+    	//Declare character for this guess
     	char letter;
+    	
+    	//Determine which letter was pressed
+    	//Set the character variable to the pressed letter
+    	//And hide the respective letter button from the screen
     	if (event.getSource()==btnA){
     		letter='a';
     		btnA.setVisible(false);
@@ -243,28 +261,51 @@ public class GameController{
     	} else if (event.getSource()==btnY){
     		letter='y';
     		btnY.setVisible(false);
-    	} else{
+    	} else if (event.getSource()==btnZ){
     		letter='z';
     		btnZ.setVisible(false);
+    	} else{
+    		return;
     	}
+    
+    	//If the guessed letter has already been guessed,
+    	//End the method.
 		if(currentGame.checkLetter(letter)){
+			return;
 		}
+		
+		//Or else,
 		else{
+			//Pass the letter to the currentGame's guessLetter method
 			currentGame.guessLetter(letter);
+			
+			//Change the displayed phrase to reflect the guesses
 			textArea.setText(currentGame.phrase.toUpperCase());
+			
+			//Check for a win
 			checkWin(event);
+			
+			//Check for a lose
 			checkLose(event);
 		}
 		
     }
     
+
+    //This method is run when a key is pressed from the keyboard
     @FXML
     void pressKey(KeyEvent event){
+    	//If a phrase is not yet generated, end method
     	if(currentGame.phrase==null){
     		return;
     	}
     	
+    	//Declare character variable
     	char letter;
+    	
+    	//Determine which key was pressed
+    	//Set the letter variable to the key value
+    	//Hide the respective letters' button on the screen
     	if (event.getCode()==KeyCode.A){
     		letter='a';
     		btnA.setVisible(false);
@@ -347,23 +388,38 @@ public class GameController{
     	else{ 
     		return;
     	}
-    	if(currentGame.checkLetter(letter)){
+    	
+    	//If the guessed letter has already been guessed,
+    	//End the method.
+		if(currentGame.checkLetter(letter)){
+			return;
 		}
+		
+		//Or else,
 		else{
+			//Pass the letter to the currentGame's guessLetter method
 			currentGame.guessLetter(letter);
+			
+			//Change the displayed phrase to reflect the guesses
 			textArea.setText(currentGame.phrase.toUpperCase());
+			
+			//Check for a win
 			checkWin(new ActionEvent());
+			
+			//Check for a lose
 			checkLose(new ActionEvent());
 		}
     }
     
     
+    //This method checks to see if the user has won on the last guess
     void checkWin(ActionEvent event){
+    	//If the game is a winner, display winning prompt
     	if (currentGame.checkAnswer()){
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("You won!");
 			alert.setHeaderText("GREAT JOB! YOU WON!");
-			alert.setContentText(String.format("The answer was: %s%n%nWould you like to play again?%n",currentGame.phrase.toUpperCase()));
+			alert.setContentText(String.format("The answer was: %s%n%nWould you like to play again?%n",currentGame.getAnswer().toUpperCase()));
 
 			ButtonType buttonTypeYes = new ButtonType("Yes! Start New Game.");
 			ButtonType buttonTypeNo = new ButtonType("No. Close Game.");
@@ -379,12 +435,14 @@ public class GameController{
 		}
     }
     
+    //This method checks to see if the user has lost, or has a new incorrect guess
     void checkLose(ActionEvent event){
     	switch(currentGame.wrong){
+    		//Display parts of body based on number of wrong guesses
     		case 0: break;
     		case 1: head.setVisible(true);
     				break;
-    		case 2: body.setVisible(true);
+    		case 2:	body.setVisible(true);
     				break;
     		case 3: leftArm.setVisible(true);
     				break;
@@ -395,11 +453,12 @@ public class GameController{
     		case 6: rightLeg.setVisible(true);
     				eyes.setVisible(true);
     				mouth.setVisible(true);
-    				
+    		
+    				//Display losing prompt
 		    		Alert alert = new Alert(AlertType.CONFIRMATION);
 					alert.setTitle("You LOSE!");
 					alert.setHeaderText("Sorry, YOU LOST!");
-					alert.setContentText("Would you like to play again?");
+					alert.setContentText(String.format("The answer was: %s%n%nWould you like to play again?%n",currentGame.getAnswer().toUpperCase()));
 		
 					ButtonType buttonTypeYes = new ButtonType("Yes! Start New Game.");
 					ButtonType buttonTypeNo = new ButtonType("No. Close Game.");
@@ -413,14 +472,23 @@ public class GameController{
 					    System.exit(0);
 					}
 					break;
+					
+    		default : break;
     	}
     }
     
+    //This method resets the game (when the "Play New Game" button is clicked)
     @FXML
     void resetGame(){
+    	//Set wrong guesses to 0
     	currentGame.wrong=0;
+    	
+    	//Clear guesses and add space
     	currentGame.guesses.clear();
     	currentGame.guesses.add(' ');
+    	
+    	//Set body parts to non-visible
+    	prompt.setVisible(false);
     	head.setVisible(false);
     	eyes.setVisible(false);
     	mouth.setVisible(false);
@@ -429,6 +497,8 @@ public class GameController{
     	rightArm.setVisible(false);
     	leftLeg.setVisible(false);
     	rightLeg.setVisible(false);
+    	
+    	//Set all buttons to visible
     	btnA.setVisible(true);
     	btnB.setVisible(true);
     	btnC.setVisible(true);

@@ -2,8 +2,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class Play extends Application{
@@ -19,6 +17,7 @@ public class Play extends Application{
 		Scene scene = new Scene(root);
 		PrimaryStage.setTitle("HangDude");
 		PrimaryStage.setScene(scene);
+		PrimaryStage.setResizable(false);
 		PrimaryStage.show();
 	}
 
