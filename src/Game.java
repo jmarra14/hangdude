@@ -12,13 +12,18 @@ public class Game {
 	private String answer;
 	
 	//String for storing current phrase displayed on screen
-	String phrase;
+	private String phrase;
 	
 	//Collection of guesses using ArrayList
-	Collection<Character> guesses = new ArrayList<Character>();
+	private Collection<Character> guesses = new ArrayList<Character>();
 	
 	//Number of wrong guesses
-	int wrong;
+	private int wrong;
+	
+	//Default constructor
+	public Game(){
+		wrong=0;
+	}
 	
 	//Generates new phrase for game based on passed in level dictionary
 	public void generatePhrase(String lev){
@@ -29,6 +34,7 @@ public class Game {
 			while(read.hasNext()){
 				dict.add(read.nextLine());
 			}
+
 			//Set answer to a random phrase in the ArrayList
 			for (int i = 0; i<=r.nextInt(dict.size()); i++){
 				answer = dict.get(i);
@@ -38,16 +44,15 @@ public class Game {
 			//Call changePhrase() to create phrase to be displayed
 			phrase = "";
 			changePhrase();
-			
-		} catch(FileNotFoundException ex){
-			//Display error if dictionary file can't be found
-			System.out.println("file error.");
+		
+		} catch (FileNotFoundException ex) {
+			System.out.println("Selected dictionary not found!");
 		}
 				
 	}
 	
 	//Executed when a letter is pressed or entered
-	void guessLetter(char letter){
+	public void guessLetter(char letter){
 		//add letter to guesses collection
 		guesses.add(letter);
 		//if letter is in the answer, change the phrase
@@ -61,7 +66,7 @@ public class Game {
 	}
 	
 	//Changes on-screen phrase
-	void changePhrase(){
+	public void changePhrase(){
 		//resets phrase to no characters
 		phrase = "";
 		//loop through the characters in the answer
@@ -79,7 +84,7 @@ public class Game {
 	}
 	
 	//Checks if the letter has already been guessed
-	boolean checkLetter(char letter){
+	public boolean checkLetter(char letter){
 		//Create iterator from guesses collection
 		Iterator<Character> check = guesses.iterator();
 		
@@ -93,7 +98,7 @@ public class Game {
 	}
 	
 	//Checks if the letter is in the answer
-	boolean letterExists(char ch){
+	public boolean letterExists(char ch){
 		//Create string of the letter
 		String let = ""+ch;
 		//If the answer contains the letter string, return true
@@ -107,12 +112,34 @@ public class Game {
 	
 	//Checks to see if the current phrase is the answer.
 	//In other words, return true if the answer has been solved
-	boolean checkAnswer(){
+	public boolean checkAnswer(){
 		if (phrase.equals(answer)){
 			return true;
 		} else{
 			return false;
 		}
+	}
+	
+	//Clears the guesses Collection
+	public void clearGuesses(){
+		guesses.clear();
+		guesses.add(' ');
+	}
+	
+	//Resets wrong guesses to 0
+	public void resetWrong(){
+		wrong=0;
+	}
+
+	//Returns number of wrong guesses
+	public int getWrong(){
+		return wrong;
+	}
+	
+	//Returns current phrase based on guesses
+	public String getPhrase(){
+		changePhrase();
+		return phrase;
 	}
 	
 	//Getter method for the answer

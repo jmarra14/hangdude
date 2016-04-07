@@ -17,13 +17,16 @@ import javafx.scene.text.Text;
 public class GameController{
 	
 	//Create a new Game object called currentGame
-	public Game currentGame = new Game();
+	private Game currentGame = new Game();
 	
 	@FXML
 	private Text prompt;
 	
 	@FXML
 	private Text textArea;
+	
+	@FXML
+	private Text WrongGuesses;
     
     @FXML
     private Text eyes;
@@ -155,15 +158,15 @@ public class GameController{
     	//Runs generatePhrase method of currentGame based on 
     	//the difficulty selected
     	if(rdoHard.isSelected()){
-    		currentGame.generatePhrase("src/HardDict.txt");
+    		currentGame.generatePhrase("Dictionaries/HardDict.txt");
     	}else if (rdoMedium.isSelected()){
-    		currentGame.generatePhrase("src/MedDict.txt");
+    		currentGame.generatePhrase("Dictionaries/MedDict.txt");
     	}else{
-    		currentGame.generatePhrase("src/EasyDict.txt");
+    		currentGame.generatePhrase("Dictionaries/EasyDict.txt");
     	}
     	
     	//Display the blanks for the new phrase in the window
-    	textArea.setText(new String(currentGame.phrase));
+    	textArea.setText(new String(currentGame.getPhrase()));
     }
 
     //This method ends the program with the Quit button is clicked
@@ -176,7 +179,7 @@ public class GameController{
     @FXML
     void letterGuess(ActionEvent event){
     	//If a phrase has not been generated, do not run this method
-    	if(currentGame.phrase==null){
+    	if(currentGame.getAnswer()==null){
     		return;
     	}
     	
@@ -280,7 +283,7 @@ public class GameController{
 			currentGame.guessLetter(letter);
 			
 			//Change the displayed phrase to reflect the guesses
-			textArea.setText(currentGame.phrase.toUpperCase());
+			textArea.setText(currentGame.getPhrase().toUpperCase());
 			
 			//Check for a win
 			checkWin(event);
@@ -296,7 +299,7 @@ public class GameController{
     @FXML
     void pressKey(KeyEvent event){
     	//If a phrase is not yet generated, end method
-    	if(currentGame.phrase==null){
+    	if(currentGame.getAnswer()==null){
     		return;
     	}
     	
@@ -401,7 +404,7 @@ public class GameController{
 			currentGame.guessLetter(letter);
 			
 			//Change the displayed phrase to reflect the guesses
-			textArea.setText(currentGame.phrase.toUpperCase());
+			textArea.setText(currentGame.getPhrase().toUpperCase());
 			
 			//Check for a win
 			checkWin(new ActionEvent());
@@ -437,7 +440,10 @@ public class GameController{
     
     //This method checks to see if the user has lost, or has a new incorrect guess
     void checkLose(ActionEvent event){
-    	switch(currentGame.wrong){
+    	//Change wrong guesses prompt
+    	WrongGuesses.setText((5-currentGame.getWrong())+"  wrong guesses remaining!");
+    	
+    	switch(currentGame.getWrong()){
     		//Display parts of body based on number of wrong guesses
     		case 0: break;
     		case 1: head.setVisible(true);
@@ -481,11 +487,13 @@ public class GameController{
     @FXML
     void resetGame(){
     	//Set wrong guesses to 0
-    	currentGame.wrong=0;
+    	currentGame.resetWrong();
+    	
+    	//Set wrong guesses prompt to 5
+    	WrongGuesses.setText("5  Wrong Guesses Remaining!");
     	
     	//Clear guesses and add space
-    	currentGame.guesses.clear();
-    	currentGame.guesses.add(' ');
+    	currentGame.clearGuesses();
     	
     	//Set body parts to non-visible
     	prompt.setVisible(false);
