@@ -1,10 +1,30 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+/**
+ *  __  __                           ____                __            
+ * /\ \/\ \                         /\  _`\             /\ \           
+ * \ \ \_\ \     __      ___      __\ \ \/\ \  __  __   \_\ \     __   
+ *  \ \  _  \  /'__`\  /' _ `\  /'_ `\ \ \ \ \/\ \/\ \  /'_` \  /'__`\ 
+ *   \ \ \ \ \/\ \L\.\_/\ \/\ \/\ \L\ \ \ \_\ \ \ \_\ \/\ \L\ \/\  __/ 
+ *    \ \_\ \_\ \__/.\_\ \_\ \_\ \____ \ \____/\ \____/\ \___,_\ \____\
+ *     \/_/\/_/\/__/\/_/\/_/\/_/\/___L\ \/___/  \/___/  \/__,_ /\/____/
+ *                                /\____/                              
+ *                                \_/__/                               
+ * 			Above text generated from http://patorjk.com/software/taag/
+ * 
+ * Game Class for HangDude game
+ * 
+ * @author Jacob Marra
+ * @author Kristin Johnson
+ * @author Sarah Nolan
+ *
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Game {
 	
@@ -28,11 +48,16 @@ public class Game {
 	//Generates new phrase for game based on passed in level dictionary
 	public void generatePhrase(String lev){
 		Random r = new Random();
-		try(Scanner read = new Scanner(new File(lev))){
+		try{
+			//The following lines were changed from using a Scanner
+			//to allow reading dictionaries from a .jar file
+			InputStream in = getClass().getResourceAsStream(lev); 
+			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+			
 			//Add all phrases in dictionary to an ArrayList
 			ArrayList<String> dict = new ArrayList<String>();
-			while(read.hasNext()){
-				dict.add(read.nextLine());
+			while(reader.readLine()!=null){
+				dict.add(reader.readLine());
 			}
 
 			//Set answer to a random phrase in the ArrayList
@@ -45,7 +70,7 @@ public class Game {
 			phrase = "";
 			changePhrase();
 		
-		} catch (FileNotFoundException ex) {
+		} catch (Exception ex) {
 			System.out.println("Selected dictionary not found!");
 		}
 				

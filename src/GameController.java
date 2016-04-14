@@ -1,5 +1,26 @@
-import java.util.Optional;
+/**
+ *  __  __                           ____                __            
+ * /\ \/\ \                         /\  _`\             /\ \           
+ * \ \ \_\ \     __      ___      __\ \ \/\ \  __  __   \_\ \     __   
+ *  \ \  _  \  /'__`\  /' _ `\  /'_ `\ \ \ \ \/\ \/\ \  /'_` \  /'__`\ 
+ *   \ \ \ \ \/\ \L\.\_/\ \/\ \/\ \L\ \ \ \_\ \ \ \_\ \/\ \L\ \/\  __/ 
+ *    \ \_\ \_\ \__/.\_\ \_\ \_\ \____ \ \____/\ \____/\ \___,_\ \____\
+ *     \/_/\/_/\/__/\/_/\/_/\/_/\/___L\ \/___/  \/___/  \/__,_ /\/____/
+ *                                /\____/                              
+ *                                \_/__/                               
+ * 			Above text generated from http://patorjk.com/software/taag/
+ * 
+ * GameController Class for HangDude game
+ * 
+ * This class controls the GUI and handles GUI events.
+ * 
+ * @author Jacob Marra
+ * @author Kristin Johnson
+ * @author Sarah Nolan
+ *
+ */
 
+import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -158,11 +179,11 @@ public class GameController{
     	//Runs generatePhrase method of currentGame based on 
     	//the difficulty selected
     	if(rdoHard.isSelected()){
-    		currentGame.generatePhrase("src/Dictionaries/HardDict.txt");
+    		currentGame.generatePhrase("Dictionaries/HardDict.txt");
     	}else if (rdoMedium.isSelected()){
-    		currentGame.generatePhrase("src/Dictionaries/MedDict.txt");
+    		currentGame.generatePhrase("Dictionaries/MedDict.txt");
     	}else{
-    		currentGame.generatePhrase("src/Dictionaries/EasyDict.txt");
+    		currentGame.generatePhrase("Dictionaries/EasyDict.txt");
     	}
     	
     	//Display the blanks for the new phrase in the window
